@@ -1,1 +1,2 @@
-# smdr
+Spatially Adaptive MDR Screening (smdr)
+==========================================
