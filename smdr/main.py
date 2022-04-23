@@ -1,28 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-import pygfl
-import sys
+import pygfl, sys, os, time, csv, math
 import matplotlib.pylab as plt
 import matplotlib.patches as patches
-import os
 import numpy as np
 import nibabel as nib
-import time
 import scipy.stats as st
-import csv
-import time
 import utils
-import math 
 from collections import defaultdict
 from collections import OrderedDict
 from statsmodels.stats.multitest import local_fdr
 
-
-# In[ ]:
 
 
 def _local_agg_fdr_helper(fdr_level, p_star, ghat, ghat_lambda, wstar_lambda, tmin, tmax, tmin_fdr, tmax_fdr, rel_tol=1e-20):
