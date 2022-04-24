@@ -53,4 +53,4 @@ ax[0,0].set_title('Raw data')
 ax[0,1].imshow(results['de'], cmap='gray_r', vmin=0, vmax=1)
 ax[0,1].set_title('SMDR')
 ```
-![Visualization the results](https://raw.githubusercontent.com/yifehu93/smdr/example/test_results.png)
+![Visualization the results](https://github.com/yifeihu93/smdr/blob/cf4fc2c65ff820e171a797d867004efb3ce203bb/example/test_results.png)
