@@ -1,4 +1,3 @@
-#utils.py
 import numpy as np
 import csv
 from collections import defaultdict
