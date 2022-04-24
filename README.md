@@ -32,25 +32,26 @@ To run a simple example, we can use the example data in `example/data.csv`. This
 ```python
 import numpy as np
 from smdr.main import smdr
-
 data = np.loadtxt('example/test_data.csv', delimiter=',')
-epsilon = 0.1
 
-# Runs the SMDR screening algorithm with the default settings
-results = smdr(data, epsilon=epsilon)
+# Runs the SMDR screening algorithm with the different control levels
+results1 = smdr(data, epsilon=0.1)
+results2 = smdr(data, epsilon=0.05)
 ```
 
 Visualizing of the results
 ------------------
 
-To run a simple example, we can use the example data in `example/data.csv`. This is a simple 128x128 test dataset with two plateaus of increased prior probability of signal. Running SMDR smoothing on this is simple:
+To run a simple example, we can use the example data in `example/test_data.csv`. This is a simple 128x128 test dataset with two plateaus of increased prior probability of signal. Running SMDR smoothing on this is simple:
 
 ```python
 import matplotlib.pylab as plt
-fig, ax = plt.subplots(1,2)
-ax[0,0].imshow(data, cmap='gray_r')
-ax[0,0].set_title('Raw data')
-ax[0,1].imshow(results['de'], cmap='gray_r', vmin=0, vmax=1)
-ax[0,1].set_title('SMDR')
+fig, axs = plt.subplots(1,3, figsize=(15, 5))
+axs[0].set_title('Raw data', fontsize=15)
+axs[0].imshow(data, cmap='gray_r', vmin=0, vmax=1)
+axs[1].set_title('SMDR(beta=0.1)', fontsize=15)
+axs[1].imshow(results1['de'], cmap='gray_r', vmin=0, vmax=1)
+axs[2].set_title('SMDR(beta=0.05)', fontsize=15)
+axs[2].imshow(results2['de'], cmap='gray_r', vmin=0, vmax=1)
 ```
 ![Visualization the results](https://github.com/yifeihu93/smdr/blob/cf4fc2c65ff820e171a797d867004efb3ce203bb/example/test_results.png)
