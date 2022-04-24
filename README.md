@@ -33,7 +33,7 @@ To run a simple example, we can use the example data in `example/data.csv`. This
 import numpy as np
 from smdr.main import smdr
 
-data = np.loadtxt('example/fmri_slice_zscores.csv', delimiter=',')
+data = np.loadtxt('example/test_data.csv', delimiter=',')
 epsilon = 0.1
 
 # Runs the SMDR screening algorithm with the default settings
@@ -50,7 +50,7 @@ import matplotlib.pylab as plt
 fig, ax = plt.subplots(1,2)
 ax[0,0].imshow(data, cmap='gray_r')
 ax[0,0].set_title('Raw data')
-
 ax[0,1].imshow(results['de'], cmap='gray_r', vmin=0, vmax=1)
 ax[0,1].set_title('SMDR')
 ```
+![Visualization the results](https://raw.githubusercontent.com/yifehu93/smdr/example/test_results.png)
