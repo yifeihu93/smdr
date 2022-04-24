@@ -33,9 +33,24 @@ To run a simple example, we can use the example data in `example/data.csv`. This
 import numpy as np
 from smdr.main import smdr
 
-data = np.loadtxt('data/fmri_slice_zscores.csv', delimiter=',')
+data = np.loadtxt('example/fmri_slice_zscores.csv', delimiter=',')
 epsilon = 0.1
 
 # Runs the SMDR screening algorithm with the default settings
 results = smdr(data, epsilon=epsilon)
+```
+
+Visualizing of the results
+------------------
+
+To run a simple example, we can use the example data in `example/data.csv`. This is a simple 128x128 test dataset with two plateaus of increased prior probability of signal. Running SMDR smoothing on this is simple:
+
+```python
+import matplotlib.pylab as plt
+fig, ax = plt.subplots(1,2)
+ax[0,0].imshow(data, cmap='gray_r')
+ax[0,0].set_title('Raw data')
+
+ax[0,1].imshow(results['de'], cmap='gray_r', vmin=0, vmax=1)
+ax[0,1].set_title('SMDR')
 ```
