@@ -25,9 +25,7 @@ You can then run the tool directly from the terminal by typing the `smdr` comman
 Running an example
 ------------------
 
-There are lots of parameters that you can play with if you so choose, but one of the biggest benefit of FDR smoothing is that you don't have to worry about it in most cases.
-
-To run a simple example, we can use the example data in `example/data.csv`. This is a simple 128x128 test dataset with two plateaus of increased prior probability of signal. Running FDR smoothing on this is simple:
+To run a simple example, we can use the example data in `example/test_data.csv`. This is a simple 128 x 128 test dataset with two partially overlapped circle areas of signal. Running SMDR  on this is simple:
 
 ```python
 import numpy as np
@@ -42,7 +40,7 @@ results2 = smdr(data, epsilon=0.05)
 Visualizing of the results
 ------------------
 
-To run a simple example, we can use the example data in `example/test_data.csv`. This is a simple 128x128 test dataset with two plateaus of increased prior probability of signal. Running SMDR smoothing on this is simple:
+Once you have run the algorithm, you can use the returned dictionary to analyze the results.
 
 ```python
 import matplotlib.pylab as plt
