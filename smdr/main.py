@@ -202,6 +202,16 @@ def afnc(z0, epsilon):
     de[reject] = 1
     return(de)
 
+def fdrs(z, fdr_level):
+    ''' wrapper function of smoothfdr. '''
+    results_fdrs = smooth_fdr(z, fdr_level, verbose=5, missing_val=0)
+    return {'de': results_fdrs['discoveries'],
+            'lfdr': 1-results_fdrs['posteriors'],
+            'post': results_fdrs['posteriors'],
+            'c': results_fdrs['priors'],
+            '1-c': 1-results_fdrs['priors']}
+
+
 def smdr(z, epsilon, verbose=5, missing_val=0):
     ''' Smooth MDR screening procedure proposed by our research. '''
     results_fdrs = smooth_fdr(z, 0.05, verbose=verbose, missing_val=missing_val)
