@@ -2,12 +2,7 @@ Spatially Adaptive MDR Screening (smdr)
 ==========================================
 
 
-The `smdr` package provides a novel spatially adaptive variable screening procedure to
-enable effective control of false negatives while leveraging the spatial structure of fMRI data.
-Compared to existing methods built upon multiple hypothesis testing, the new procedure is less
-stringent in false positive control to trade for better identification and protection for functional
-regions. The new method is also substantially different from existing false negative control
-procedures which do not take spatial information into account.
+The `smdr` package provides a novel spatially adaptive variable screening procedure to enable effective control of false negatives while leveraging the spatial structure of fMRI data. Compared to existing statistical methods in fMRI data analysis, the new procedure directly control false negatives at a desirable level and is completely data driven. 
 
 Installation
 ------------
