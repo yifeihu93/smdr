@@ -20,14 +20,14 @@ You can then run the tool directly from the terminal by typing the `smdr` comman
 Running an example
 ------------------
 
-To run a simple example, we can use the example data in `example/test_data.csv`. This is a simple 128 x 128 test dataset with two partially overlapped circle areas of signal. Running SMDR  on this is simple:
+To run a simple example, we can use the example data in `example/test_data.csv`. This is a simple 128 x 128 test dataset with two partially overlapped circle areas of signal as described in Hu and Jeng (2022). Running SMDR  on this is simple:
 
 ```python
 import numpy as np
 from smdr.main import smdr
 data = np.loadtxt('example/test_data.csv', delimiter=',')
 
-# Runs the SMDR screening algorithm with the different control levels
+# Runs the SMDR screening algorithm with different control levels
 results1 = smdr(data, epsilon=0.1)
 results2 = smdr(data, epsilon=0.05)
 ```
@@ -48,3 +48,8 @@ axs[2].set_title('SMDR(beta=0.05)', fontsize=15)
 axs[2].imshow(results2['de'], cmap='gray_r', vmin=0, vmax=1)
 ```
 ![Visualization the results](https://github.com/yifeihu93/smdr/blob/cf4fc2c65ff820e171a797d867004efb3ce203bb/example/test_results.png)
+
+Reference
+---------
+Hu, Y. and Jeng X.J. (2022) Spatially Adaptive Variable Screening in Presurgical fMRI Data Analysis.
+
